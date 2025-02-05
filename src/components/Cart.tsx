@@ -2,7 +2,11 @@ import React from 'react';
 import { useCart } from '../context/CartContext';
 import { Trash2, MinusCircle, PlusCircle } from 'lucide-react';
 
-export function Cart() {
+interface CartProps {
+  onCheckout: () => void;
+}
+
+export function Cart({ onCheckout }: CartProps) {
   const { cart, removeFromCart, updateQuantity, total } = useCart();
 
   if (cart.length === 0) {
@@ -56,6 +60,12 @@ export function Cart() {
         <span className="font-semibold">Total:</span>
         <span className="text-xl font-bold">${total.toFixed(2)}</span>
       </div>
+      <button
+        onClick={onCheckout}
+        className="w-full bg-indigo-600 text-white py-3 rounded-lg hover:bg-indigo-700 transition-colors"
+      >
+        Proceed to Checkout
+      </button>
     </div>
   );
 }

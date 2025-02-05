@@ -20,3 +20,14 @@ export interface CartContextType {
   clearCart: () => void;
   total: number;
 }
+
+export interface CheckoutFormData {
+  email: string;
+  name: string;
+  address: string;
+  city: string;
+  country: string;
+  cardNumber: string;
+  expiryDate: string;
+  cvv: string;
+}

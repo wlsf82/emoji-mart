@@ -1,6 +1,6 @@
 # emoji-mart
 
-A sample e-commerce app to sell emojis
+A sample e-commerce app to sell emojis.
 
 ___
 

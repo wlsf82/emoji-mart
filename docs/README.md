@@ -29,6 +29,30 @@ Emoji Mart is a user-friendly web application that allows users to browse, searc
 - **Update Quantity**: Users can increase or decrease the quantity of emojis in their cart.
 - **Remove from Cart**: Users can remove emojis from their cart.
 - **Cart Persistence**: The cart retains its state after a page refresh.
+- **Cart Checkout**: Users can proceed with the checkout.
+
+### Checkout
+
+- **Add to Cart**: Users can add contact information
+  - Email
+  - Full name
+- **Add to Cart**: Users can add shipping address
+  - Street address
+  - City
+  - Country
+- **Add to Cart**: Users can add payment information
+  - Card number
+  - Expiry date
+  - CVV
+- **Total amount**: Users can see the total amount before completing the checkout
+- **Complete Purchase button**: Users can complete the checkout by clicking the Complete Purchase button
+
+### Thank You Page
+
+- **Heading**: Shows a heading witht the text 'Thank You for Your Purchase!'
+- **Explanatory paragraph**: Shows an explanatory paragraph with the text 'Your order has been successfully placed. We've sent a confirmation email with your order details.'
+- **Order Number**: Shows a random order number for each purchase
+- **Back to Store button**: Allows the user to go back to the store
 
 ### User Experience
 

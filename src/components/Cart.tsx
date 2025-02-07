@@ -11,7 +11,7 @@ export function Cart({ onCheckout }: CartProps) {
 
   if (cart.length === 0) {
     return (
-      <div className="text-center py-8">
+      <div data-testid="empty-cart" className="text-center py-8">
         <p className="text-gray-500">Your cart is empty</p>
       </div>
     );
@@ -21,6 +21,7 @@ export function Cart({ onCheckout }: CartProps) {
     <div className="space-y-4">
       {cart.map((item) => (
         <div
+          data-testid="cart-item"
           key={item.emoji.id}
           className="flex items-center justify-between bg-white p-4 rounded-lg shadow"
         >
@@ -39,7 +40,7 @@ export function Cart({ onCheckout }: CartProps) {
               >
                 <MinusCircle size={20} />
               </button>
-              <span className="w-8 text-center">{item.quantity}</span>
+              <span data-testid="cart-item-counter" className="w-8 text-center">{item.quantity}</span>
               <button
                 onClick={() => updateQuantity(item.emoji.id, item.quantity + 1)}
                 className="text-gray-500 hover:text-gray-700"

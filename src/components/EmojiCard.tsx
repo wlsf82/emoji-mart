@@ -12,7 +12,7 @@ export function EmojiCard({ emoji, onClick }: EmojiCardProps) {
   const { addToCart } = useCart();
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 transition-transform hover:scale-105">
+    <div data-testid="emoji-card" className="bg-white rounded-lg shadow-md p-6 transition-transform hover:scale-105">
       <div className="cursor-pointer" onClick={onClick}>
         <div className="text-6xl mb-4 text-center">{emoji.symbol}</div>
         <h3 className="text-xl font-semibold mb-2">{emoji.name}</h3>

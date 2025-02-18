@@ -5,6 +5,9 @@ describe('<ThankYouPage />', () => {
   it('renders with order number', () => {
     cy.mount(<ThankYouPage orderNumber='ABCDE12345' />)
 
+    cy.contains('h1', 'Thank You for Your Purchase!').should('be.visible')
+    cy.contains('p', `Your order has been successfully placed. We've sent a confirmation email with your order details.`)
+      .should('be.visible')
     cy.contains('Order Number').should('be.visible')
     cy.contains('ABCDE12345').should('be.visible')
   })
@@ -14,7 +17,9 @@ describe('<ThankYouPage />', () => {
 
     cy.mount(<ThankYouPage orderNumber='ABCDE12345' onBackToStore={spyFn} />)
 
-    cy.contains('button', 'Back to Store').click()
+    cy.contains('button', 'Back to Store')
+      .should('be.visible')
+      .click()
 
     cy.get('@onBackToStoreSpyFn').should('have.been.calledOnce')
   })

@@ -12,7 +12,7 @@ describe('<ThankYouPage />', () => {
     cy.contains('ABCDE12345').should('be.visible')
   })
 
-  it('calls the Back to Store onClick function', () => {
+  it('calls the Back to Store onClick handler', () => {
     const spyFn = cy.spy().as('onBackToStoreSpyFn')
 
     cy.mount(<ThankYouPage orderNumber='ABCDE12345' onBackToStore={spyFn} />)

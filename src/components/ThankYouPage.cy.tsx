@@ -3,7 +3,7 @@ import { ThankYouPage } from './ThankYouPage'
 
 describe('<ThankYouPage />', () => {
   it('renders with order number', () => {
-    cy.mount(<ThankYouPage orderNumber='ABCDE12345' />)
+    cy.mount(<ThankYouPage orderNumber='ABCDE12345' onBackToStore={() => {}} />)
 
     cy.contains('h1', 'Thank You for Your Purchase!').should('be.visible')
     cy.contains('p', `Your order has been successfully placed. We've sent a confirmation email with your order details.`)

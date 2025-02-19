@@ -8,7 +8,6 @@ import { ShoppingCart, X } from 'lucide-react';
 import { useCart } from './context/CartContext';
 import { CheckoutForm } from './components/CheckoutForm';
 import { ThankYouPage } from './components/ThankYouPage';
-import { CheckoutFormData } from './types';
 
 type AppView = 'store' | 'checkout' | 'thankYou';
 
@@ -19,7 +18,7 @@ function AppContent() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [currentView, setCurrentView] = useState<AppView>('store');
   const [orderNumber, setOrderNumber] = useState<string>('');
-  const { cart, addToCart, clearCart, total } = useCart();
+  const { cart, addToCart, clearCart } = useCart();
 
   const cartItemCount = cart.reduce((total, item) => total + item.quantity, 0);
 
@@ -36,7 +35,7 @@ function AppContent() {
     setCurrentView('checkout');
   };
 
-  const handleCompleteCheckout = (formData: CheckoutFormData) => {
+  const handleCompleteCheckout = () => {
     // Simulate order processing
     const newOrderNumber = Math.random().toString(36).substring(2, 10).toUpperCase();
     setOrderNumber(newOrderNumber);

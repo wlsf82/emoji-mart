@@ -6,7 +6,6 @@ export default defineConfig({
     fixturesFolder: false,
     supportFile: false,
   },
-
   component: {
     devServer: {
       framework: "react",

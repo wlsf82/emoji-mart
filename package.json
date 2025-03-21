@@ -9,7 +9,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "cy:open": "cypress open",
-    "test": "cypress run",
+    "test": "npm run test:components && npm run test:e2e",
+    "test:e2e": "cypress run",
     "test:components": "cypress run --component"
   },
   "dependencies": {

@@ -3,7 +3,7 @@ describe('Emoji Mart App', () => {
     cy.visit('/');
   });
 
-  it('should display the homepage with a list of emojis', () => {
+  it('displays a list of emojis at the homepage', () => {
     cy.get('h1').contains('EmojiMart');
     cy.get('input[placeholder="Search emojis..."]').should('be.visible');
     cy.get('[data-testid="emoji-card"]')
@@ -11,7 +11,7 @@ describe('Emoji Mart App', () => {
       .and('be.visible');
   });
 
-  it('should filter emojis based on search input', () => {
+  it('filters emojis based on search input', () => {
     cy.get('input[placeholder="Search emojis..."]').type('Rocket');
 
     cy.get('[data-testid="emoji-card"]').should('have.length', 1);
@@ -20,7 +20,7 @@ describe('Emoji Mart App', () => {
       .should('be.visible');
   });
 
-  it('should add an emoji to the cart', () => {
+  it('adds an emoji to the cart', () => {
     cy.get('[data-testid="emoji-card"]').contains('😊').click();
 
     cy.contains('button', 'Add to Cart').click();
@@ -31,7 +31,7 @@ describe('Emoji Mart App', () => {
       .should('be.visible');
   });
 
-  it('should remove an emoji from the cart', () => {
+  it('removes an emoji from the cart', () => {
     cy.get('[data-testid="emoji-card"]').contains('😊').click();
     cy.contains('button', 'Add to Cart').click();
     cy.get('.lucide-shopping-cart').click(); // Open cart
@@ -47,7 +47,7 @@ describe('Emoji Mart App', () => {
       .should('be.visible');
   });
 
-  it('should update the quantity of an emoji in the cart', () => {
+  it('updates the quantity of an emoji in the cart', () => {
     cy.get('[data-testid="emoji-card"]')
       .contains('😊')
       .click();

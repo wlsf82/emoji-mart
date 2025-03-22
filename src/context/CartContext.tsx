@@ -50,6 +50,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   );
 }
 
+/* eslint-disable react-refresh/only-export-components */
 export function useCart() {
   const context = useContext(CartContext);
   if (context === undefined) {

@@ -36,7 +36,7 @@ jobs:
       - name: Install frontend modules
         uses: cypress-io/github-action@v6
         with:
-          install-command: npm run install
+          install-command: npm install
           runTests: false
       - name: Run E2E tests 🧪
         uses: cypress-io/github-action@v6

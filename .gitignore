@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Cypress
+cypress/downloads/
+cypress/reports/mocha/
+cypress/screenshots/
+cypress/videos/
+
+mochawesome-report/

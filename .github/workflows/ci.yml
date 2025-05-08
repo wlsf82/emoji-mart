@@ -14,23 +14,8 @@ jobs:
         run: npm install
       - name: Run ESLint
         run: npm run lint
-  component-tests:
+  component-and-e2e-tests:
     needs: eslint
-    runs-on: ubuntu-22.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Install frontend modules
-        uses: cypress-io/github-action@v6
-        with:
-          install-command: npm install
-          runTests: false
-      - name: Run frontend component tests 🧪
-        uses: cypress-io/github-action@v6
-        with:
-          command: npm run test:components
-  e2e-tests:
-    needs: component-tests
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
@@ -44,4 +29,6 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           start: npm run dev
-          command: npm run test:e2e
+          command: npm test
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}

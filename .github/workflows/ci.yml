@@ -25,6 +25,8 @@ jobs:
         with:
           install-command: npm install
           runTests: false
+      - name: Create mochawesome-report directory
+        run: mkdir -p mochawesome-report
       - name: Run E2E tests 🧪
         uses: cypress-io/github-action@v6
         with:

@@ -15,7 +15,7 @@
     "report:tests": "mochawesome-merge 'cypress/reports/mocha/*.json' > mochawesome-report/mochawesome.json && marge mochawesome-report/mochawesome.json",
     "open:report": "open mochawesome-report/mochawesome.html",
     "report:cleanup": "rm mochawesome-report/* || true && rm mochawesome-report/assets/* || true && rm cypress/reports/mocha/* || true",
-    "slack-integration": "cypress-slack-reporter --ci-provider custom --custom-url=https://github.com/wlsf82/emoji-mart/actions/workflows/ci.yml --report-dir mochawesome-report"
+    "slack-integration": "cypress-slack-reporter --ci-provider custom --custom-url=https://github.com/wlsf82/emoji-mart/actions/workflows/ci.yml --custom-text='App: Emoji Mart' --report-dir mochawesome-report"
   },
   "dependencies": {
     "lucide-react": "^0.344.0",
